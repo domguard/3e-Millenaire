@@ -1,0 +1,86 @@
+{% extends "shop/base.html" %}
+{% comment %}
+-------------------------------------------------------------------
+This is the base product detail page.
+To modify the templates of specific types of products, such as
+ProductVariations or CustomProducts, look for product/detail_xxx.html
+-------------------------------------------------------------------
+{% endcomment %}
+{% load i18n %}
+{% load thumbnail %}
+{% load satchmo_price %}
+{% load satchmo_currency satchmo_category %}
+{% load satchmo_util satchmo_discounts %}
+{% load app_plugins %}
+
+
+{% block title %}{{ product.translated_name }}{% endblock %}
+
+{% block extra-head %}
+{% if product.meta %}
+    <meta name="description" content="{{product.meta}}">
+{% endif %}
+{% endblock %}
+
+{% block navbar %}
+<li class="first"><a href="{{ shop_base }}/">{% trans "Home" %}</a></li>
+{% for name, url in product.category.all.0.get_url_name %}
+    <li><a href="{{ url }}">{{ name }}</a></li>
+{% endfor %}
+<li>{{ product.translated_name }}</li>
+{% endblock %}
+
+{% block content %}
+{% block productdetail %}
+<h3>{{ product.translated_name }}</h3>
+
+<form id="options" action="{% url satchmo_smart_add %}" method="post">{% csrf_token %}
+
+<br/>
+<table border="0"><tr><td>
+    
+{% for pic in product.productimage_set.all %}
+    {% thumbnail pic.picture 280x280 as image %}
+    <img src="{{ image }}" width="{{ image.width }}" height="{{ image.height }}" />
+{% endfor %}
+
+{% with product.translated_attributes as atts %}{% if atts %}
+<p class="productattributes">
+{% for att in product.translated_attributes %}
+<label>{{ att.description }}</label>: {{ att.value }}<br/>
+{% endfor %}
+</p>
+{% endif %}{% endwith %}
+
+</td><td valign="top">
+    
+<p>{{ product.translated_description }}</p>
+
+<div id="price_addcart">
+
+	{% if sale %}<strike id="fullprice" style="display: block;">{{ product|discount_price:""|currency }}</strike>{% endif %}
+	<span id="price">{{ product|discount_price:sale|currency }}</span>
+
+<br/>
+<img class="addcart" src="/static/img/panier.gif" border="0" onclick="$('#options').submit();"/>
+
+</div>
+
+</td></tr>
+</table>
+
+
+{% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
+<input type="hidden" size="5" name="quantity" id="quantity" value="1" class="priced" />
+<input type="hidden" name="productname" id="productname" value="{{product.slug}}" />
+
+{% plugin_point "product_add_buttons" %}
+{% plugin_point "product_form" %}
+</form>
+{% endblock %}
+
+{% block productfooter %}
+{% if sale %}{% include "product/product_discount_eligible.html" %}{% endif %}
+{% plugin_point "product_footer" %}
+{% endblock %}
+{% endblock %}

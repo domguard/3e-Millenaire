@@ -1,0 +1,30 @@
+Merci pour votre commande!
+--------------------------
+
+Vos articles
+------------
+{{item.product}} - {{item.quantity}} - {{item.unit_price}}
+
+Montant de la commande
+----------------------
+Total: {{order.total}}
+Sous-total: {{order.sub_total}}
+Livraison: {{order.shipping_cost}} - {{order.shipping_method}} - {{order.shipping_description}}
+
+Adresse de livraison
+--------------------
+{{order.ship_addressee}}
+{{order.ship_street1}}
+{{order.ship_street2}}
+{{order.ship_city}}
+{{order.ship_postal_code}}
+{{order.ship_country}}
+
+Adresse de facturation
+----------------------
+{{order.bill_addressee}}
+{{order.bill_street1}}
+{{order.bill_street2}}
+{{order.bill_city}}
+{{order.bill_postal_code}}
+{{order.bill_country}}

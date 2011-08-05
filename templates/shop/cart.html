@@ -1,0 +1,100 @@
+{% extends "shop/base.html" %}
+{% load i18n %}
+{% load thumbnail %}
+{% load satchmo_cart %}
+{% load satchmo_currency %}
+{% load satchmo_util %}
+{% load satchmo_product %}
+{% load satchmo_discounts %}
+{% load normalize_decimal %}
+{% block title %}{% trans "Your Cart" %}{% endblock %}
+
+{% block navbar %}
+    <li class="first"><a href="{{shop_base}}/">{% trans "Home" %}</a></li>
+    <li>{% trans "Cart" %}</li>
+{% endblock %}
+
+{% block content %}
+
+{% if error_message %}
+<div class="error">{{ error_message }}</div>
+{% endif %}
+{% if messages %}
+<ul class="messages">
+    {% for message in messages %}
+    <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+    {% endfor %}
+</ul>
+{% endif %}
+
+{% if not cart|length %}
+    <h3>{% trans "Your cart is empty." %}</h3>
+{% else %}
+    <h3>{% trans "Your Cart" %}</h3>
+    
+    <table class="ordertable" cellspacing="0" cellpadding="0"><tr>
+        
+    
+
+    <th width="300">{% trans "Item" %}</th>
+    <th></th>
+    
+    {% if sale %}
+		<th>{% trans "Regular Price" %}</th>
+		<th>{% trans "Sale Price" %}
+	{% else %}
+		<th>{% trans "Price" %}</th>
+	{% endif %}
+	
+    <th align="center">{% if default_view_tax %}{% trans "Total<br/>(incl.&nbsp;tax)" %}{% else %}{% trans "Total" %}{% endif %}</th>
+    </tr>
+
+    {% for cartitem in cart %}
+        <tr>
+            <td width="65%">
+                
+               {% thumbnail cartitem.product.main_image.picture 120x120 as image %}
+               <a class="cartitem" href="{{cartitem.product.get_absolute_url}}">
+                <img src="{{ image }}" width="{{ image.width }}" height="{{ image.height }}" border="0" class="cartimg"/>
+                {{ cartitem.description }}</a></td>
+                
+        <td width="20">
+                <form action="{% url satchmo_cart_remove %}"  method="post">{% csrf_token %}
+                     <input type="hidden" name="cartitem" value="{{ cartitem.id }}" />
+                     <a href="#" class="item_remove">
+                     <img src="/static/img/cross.png" border="0" alt="X"/></a>
+                 </form>
+    </td>     
+                
+                
+                
+			{% if sale %}<td align="center">{{ cartitem.product.unit_price|currency }}</td>{% endif %}
+			<td align="center">{{ cartitem.product|discount_price:sale|currency }}</td>
+            <td align="center">{{ cartitem|discount_line_total:sale|currency }}</td>
+        </tr>
+		{% cartitem_custom_details cartitem %}
+		{% cartitem_subscription_details cartitem %}
+    {% endfor %}
+    <tr><td colspan="{% if sale %}4{% else %}3{% endif %}" align="right">{% trans "Cart Total" %}:</td>
+        <td align="center">{{ cart|discount_cart_total:sale|currency }}</td></tr>
+    </table>
+    {% if sale %}
+	{% include "product/some_discount_eligible.html" %}
+	{% endif %}
+<p align="center">
+    <a class="bouton" href="{% url satchmo_checkout-step1 %}">{% trans "Check out" %}</a>
+    </p>
+    
+    <script type="text/javascript">
+    $(function(){
+        $('a.item_remove').bind('click',function(){
+            if(confirm('Voulez-vous vraiment supprimer cet article de votre panier ?')){
+                $(this).parent('form').submit();
+                //alert('bin');
+            }
+        });
+    });
+    </script>
+    
+{% endif %}
+{% endblock %}

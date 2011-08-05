@@ -1,0 +1,108 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2011-06-29 17:59+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n>1;\n"
+
+#: .\config.py:10
+msgid "Quinode shipping moudule parameters"
+msgstr "Paramètre module de livraison Quinode"
+
+#: .\config.py:16
+msgid "Colissimo Insurance level"
+msgstr "Niveau de recommandé Colissimo"
+
+#: .\config.py:26
+msgid "Default product weight"
+msgstr "Poids par défaut d'un produit"
+
+#: .\models.py:14
+msgid "Weight"
+msgstr "Poids"
+
+#: .\models.py:16
+msgid "Price"
+msgstr "Prix"
+
+#: .\models.py:17
+msgid "Region"
+msgstr "Region"
+
+#: .\models.py:18
+msgid "SecurExport"
+msgstr "SecurExport"
+
+#: .\models.py:21
+msgid "Letter rate"
+msgstr "Tarif Lettre suivie"
+
+#: .\models.py:22
+msgid "Letter rates"
+msgstr "Tarifs Lettre suivie"
+
+#: .\models.py:31
+#, python-format
+msgid "Country must be a string, not %s"
+msgstr "La Pays doit être une chaîne et pas un %s"
+
+#: .\models.py:33
+msgid "Weight must be a float"
+msgstr "Le poids doit être un nombre flottant"
+
+#: .\models.py:36
+#, python-format
+msgid "Bad country value '%s': could not determine region"
+msgstr "Mauvaise valeur pour le pays '%s': Impossible de déterminer la région"
+
+#: .\models.py:61
+msgid "Product"
+msgstr "Produit"
+
+#: .\models.py:62
+msgid "Is bulky?"
+msgstr "Est encombrant?"
+
+#: .\models.py:74
+msgid "Product shipping"
+msgstr "Livraison produit"
+
+#: .\models.py:75
+msgid "Products shipping"
+msgstr "Livraisons produits"
+
+#: .\shipper.py:43
+msgid "{0} Kg"
+msgstr "{0} Kg"
+
+#: .\shipper.py:47
+msgid "{0} Kg - {1}"
+msgstr "{0} Kg - {1}"
+
+#: .\shipper.py:133
+msgid "Lettre suivie"
+msgstr "Lettre suivie"
+
+#: .\shipper.py:134 .\tests.py:49
+msgid "Colissimo"
+msgstr "Colissimo"
+
+#: .\shipper.py:141
+msgid "2 business days"
+msgstr "2 jours ouvrés"
+
+#: .\shipper.py:142
+msgid "4 to 8 business days"
+msgstr "De 4 à 8 jours ouvrés"

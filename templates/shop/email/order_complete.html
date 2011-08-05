@@ -1,0 +1,41 @@
+<html>
+<head>
+    <style>
+    body {
+        font-size: 12px;
+    }
+    </style>
+</head>
+<body>
+<h1>Merci pour votre commande!</h1>
+
+<h2>Vos articles</h2>
+<table>
+    <tr><th>Produit</th><th>Quantité</th><th>Prix unitaire</th></tr>
+{% for item in order.orderitem_set.all %}
+    <tr><td>{{item.product}}</td><td>{{item.quantity}}</td><td>{{item.unit_price}}</td></tr>
+{% endfor %}
+</table>
+
+<h2>Montant de la commande</h2>
+Total: {{order.total}}<br />
+Sous-total: {{order.sub_total}}<br />
+Livraison: {{order.shipping_cost}} - {{order.shipping_method}} - {{order.shipping_description}}<br />
+
+<h2>Adresse de livraison</h2>
+{{order.ship_addressee}}<br />
+{{order.ship_street1}}<br />
+{{order.ship_street2}}<br />
+{{order.ship_city}}<br />
+{{order.ship_postal_code}}<br />
+{{order.ship_country}}<br />
+
+<h2>Adresse de facturation</h2>
+{{order.bill_addressee}}<br />
+{{order.bill_street1}}<br />
+{{order.bill_street2}}<br />
+{{order.bill_city}}<br />
+{{order.bill_postal_code}}<br />
+{{order.bill_country}}<br />
+</body>
+</html>
