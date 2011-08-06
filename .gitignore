@@ -12,6 +12,7 @@
 ##################
 /local_settings.py
 /static/images/*
+satchmo.log
 
 # OS generated files #
 ######################

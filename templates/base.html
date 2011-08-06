@@ -107,8 +107,7 @@
 		{% if popularurl %}<br/><a href="{{ popularurl }}">{% trans "Best Sellers" %}</a><br/>{% endif %}
         {% url satchmo_category_index as category_index %}
         {% if category_index %} <a href="{{ category_index }}">{% trans "Category Index" %}</a><br /> {% endif %}
-        {% url satchmo_quick_order as quick_order %}
-        {% if quick_order %}<a href="{{ quick_order }}">{% trans "Quick Order" %}</a> {% endif %}
+
 		{% plugin_point "sidebar_links" %}
 <br/><br/>
 	    <h3>{% trans "Account Information" %}</h3>
