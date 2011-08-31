@@ -150,6 +150,7 @@ INSTALLED_APPS = (
     'payment.modules.paypal',
     'quinode_shipping',
     #'south',
+    'django_extensions'
 )
 
 AUTHENTICATION_BACKENDS = (
