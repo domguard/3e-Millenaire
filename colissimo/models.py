@@ -103,7 +103,10 @@ class Rate(models.Model):
 		r = Region.get_region_from_country(country)
 		if r is None:
 			raise ValueError, "Bad country value '%s': could not determine region" % country
-		w = Rate.objects.filter(weight__gte=Decimal(str(weight)), region=r)[0].weight
+		### Fix LJ 2011-09-01
+		# w = Rate.objects.filter(weight__gte=Decimal(str(weight)), region=r)[0].weight
+		w = Rate.objects.filter(weight__gte=Decimal(str(weight)), region=r).order_by('weight')[0].weight
+		### Fix LJ 2011-09-01
 		rs = Rate.objects.filter(weight=w, region=r).order_by('price')
 		return rs
 
