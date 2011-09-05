@@ -30,13 +30,16 @@ class ProductAdminForm(forms.ModelForm):
         queryset=SortedQueryset(Category.objects),
         widget=FilteredSelectMultiple('category', False)
     )
-
     class Meta:
         model = Product
 
+from tinymce.widgets import AdminTinyMCE
 
 class ProductAdmin(ProductOptions):
     form = ProductAdminForm
-    
+    formfield_overrides = {
+        models.TextField: {'widget': AdminTinyMCE},
+        }
+        
 admin.site.unregister(Product)
 admin.site.register(Product, ProductAdmin)

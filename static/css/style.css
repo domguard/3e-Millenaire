@@ -270,12 +270,11 @@ border-left: 1px solid #a78055;
 
 #sidebar-primary {
 	position: absolute;
-	left: 732px;
+	left: 731px;
 	top: 265px;
 	width: 170px;
 	text-align: right;
 	border: 1px solid #a78055;
-	border-left-style: none;
 	border-bottom-style: none;
 }
 
