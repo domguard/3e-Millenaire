@@ -24,23 +24,23 @@ class SortedQueryset:
         #Pour toutes les autres méthodes que all : appelle la méthode du queryset
         return getattr(self.qs, name)
 
+from django.db import models
+from tinymce.widgets import AdminTinyMCE
+
 
 class ProductAdminForm(forms.ModelForm):
     category = forms.ModelMultipleChoiceField(
         queryset=SortedQueryset(Category.objects),
         widget=FilteredSelectMultiple('category', False)
     )
+    description = forms.TextField(widget=AdminTinyMCE(attrs={'cols': 80, 'rows': 30}))
     class Meta:
         model = Product
         
-from django.db import models
-from tinymce.widgets import AdminTinyMCE
 
 class ProductAdmin(ProductOptions):
     form = ProductAdminForm
-    formfield_overrides = {
-        models.TextField: {'widget': AdminTinyMCE},
-        }
+
         
 admin.site.unregister(Product)
 admin.site.register(Product, ProductAdmin)
