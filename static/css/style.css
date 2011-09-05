@@ -293,7 +293,7 @@ border-left: 1px solid #a78055;
 
 
 
-#sidebar-primary a:hover, #sidebar-primary li:hover>a {
+#sidebar-primary a:hover {
 	color: #120005;
 	background: #fcfd5a url(/static/img/asterisk_orange.png) no-repeat 4px 4px;
 	text-decoration: none;
@@ -301,15 +301,15 @@ border-left: 1px solid #a78055;
 	font-style: normal;
 }
 
-#checkout_link {
+#sidebar-primary a#checkout_link:hover {
 	background: #ead799 url(/static/img/caddy.png) no-repeat 4px 4px;
 }
 
-#profile_link {
+#sidebar-primary a#profile_link:hover {
 	background: #ead799 url(/static/img/user_mini-trans.png) no-repeat 4px 4px;
 }
 
-#callback {
+#sidebar-primary a#callback:hover {
 	background: #ead799 url(/static/img/phone.png) no-repeat 4px 6px;
 }
 
