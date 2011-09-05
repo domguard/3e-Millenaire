@@ -1,4 +1,7 @@
-/* @override http://dev.quinode.fr:8000/static/css/style.css */
+/* @override 
+	http://dev.quinode.fr:8000/static/css/style.css
+	http://www.3emillenaire.fr/static/css/style.css
+*/
 
 /* structure
 --------------------------------- */
@@ -241,13 +244,6 @@ h1, h2, h3 {
 /* link list
 --------------------------------- */
 
-#sidebar-primary {
-	position: absolute;
-	left: 734px;
-	top: 233px;
-	width: 150px;
-	text-align: right;
-}
 
 
 #menu_container {
@@ -265,41 +261,56 @@ border-left: 1px solid #a78055;
 	left: -150px;
 }
 
-#userlinks {
-	width: 150px;
-	z-index: 5;
-	border-right: 1px solid #a78055;
+#sidebar-primary h3{
+	font-size: 12px;
+	color: #998269;
+	text-align: right;
+	padding: 5px 5px 7px;
+}
+
+#sidebar-primary {
 	position: absolute;
-	top: 560px;
-	left: 0;
+	left: 732px;
+	top: 265px;
+	width: 170px;
+	text-align: right;
+	border: 1px solid #a78055;
+	border-left-style: none;
+	border-bottom-style: none;
 }
 
-#userlinks a{
-	padding-left: 40px;
+#sidebar-primary a{
+	background-color: #ead799;
+	display: inline-block;
+	width: 165px;
+	height: 20px;
+	border-top: 1px solid #a78055;
+	border-bottom: 1px solid #a78055;
+	margin-top: -1px;
+	padding-top: 5px;
+	padding-right: 5px;
 }
 
-#userlinks li{
-	margin: -1px -1px 0 0;
-}
 
-#userlinks a:hover, #userlinks li:hover>a {
+
+#sidebar-primary a:hover, #sidebar-primary li:hover>a {
 	color: #120005;
-	background: #fcfd5a url(/static/img/asterisk_orange.png) no-repeat 12px 4px;
+	background: #fcfd5a url(/static/img/asterisk_orange.png) no-repeat 4px 4px;
 	text-decoration: none;
 	font-weight: normal;
 	font-style: normal;
 }
 
 #checkout_link {
-	background: #ead799 url(/static/img/caddy.png) no-repeat 6px 4px;
+	background: #ead799 url(/static/img/caddy.png) no-repeat 4px 4px;
 }
 
 #profile_link {
-	background: #ead799 url(/static/img/user_mini-trans.png) no-repeat 8px 4px;
+	background: #ead799 url(/static/img/user_mini-trans.png) no-repeat 4px 4px;
 }
 
 #callback {
-	background: #ead799 url(/static/img/phone.png) no-repeat 12px 6px;
+	background: #ead799 url(/static/img/phone.png) no-repeat 4px 6px;
 }
 
 #callback a {

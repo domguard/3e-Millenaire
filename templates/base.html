@@ -115,14 +115,14 @@
 		{% endif %}
 	    {% if user.is_authenticated %}
 		{% url satchmo_account_info as accounturl %}
-        {% if accounturl %}<a href="{{ accounturl }}" target="blank" id="#profile_link">{% trans "Account Details" %}</a><br/>{% endif %}
-        <a href="{{ logout_url }}?next={{request.path}}">{% trans "Log out" %}</a>
+        {% if accounturl %}<a href="{{ accounturl }}" target="blank" id="profile_link">{% trans "Account Details" %}</a><br/>{% endif %}
+            <a href="{{ logout_url }}?next={{request.path}}">{% trans "Log out" %}</a>
 	    {% else %}
-        <a href="{{ login_url }}?next={{request.path}}">{% trans "Log in" %}</a>
+            <a href="{{ login_url }}?next={{request.path}}" id="profile_link">{% trans "Log in" %}</a>
 	    {% endif %}
 
 		{% url satchmo_cart as carturl %}
-	    {% if carturl %}<a href="{{ carturl }}" id="#cart_link">Votre panier  
+	    {% if carturl %}<a href="{{ carturl }}" id="cart_link">Votre panier  
 	        {% if not cart.is_empty %}
                 ({% if sale %}{{ cart|discount_cart_total:sale|currency }}{% else %}{{cart.total|currency}}{% endif%})
             {% endif%}
@@ -130,7 +130,7 @@
         {% endif %}       
         {% if not cart.is_empty %}       
             {% url satchmo_checkout-step1 as checkouturl %}
-            {% if checkouturl %}<a href="{{ checkouturl }}" id="#checkout_link">{% trans "Check out" %}</a>{% endif %}
+            {% if checkouturl %}<a href="{{ checkouturl }}" id="checkout_link">{% trans "Check out" %}</a>{% endif %}
 	    {% endif %}
 	    	
 		{% plugin_point "shop_sidebar_actions" %}
