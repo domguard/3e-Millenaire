@@ -124,8 +124,8 @@
 		{% url satchmo_cart as carturl %}
 	    {% if carturl %}<a href="{{ carturl }}" id="#cart_link">Votre panier  
 	        {% if not cart.is_empty %}
-                ({% if sale %}{{ cart|discount_cart_total:sale|currency }}{% else %}{{cart.total|currency}}
-            {% endif%})
+                ({% if sale %}{{ cart|discount_cart_total:sale|currency }}{% else %}{{cart.total|currency}}{% endif%})
+            {% endif%}
             </a>
         {% endif %}       
         {% if not cart.is_empty %}       
