@@ -32,7 +32,8 @@ class ProductAdminForm(forms.ModelForm):
     )
     class Meta:
         model = Product
-
+        
+from django.db import models
 from tinymce.widgets import AdminTinyMCE
 
 class ProductAdmin(ProductOptions):
