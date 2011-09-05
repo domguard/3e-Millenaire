@@ -71,7 +71,7 @@ ProductVariations or CustomProducts, look for product/detail_xxx.html
 
 
 {% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
-<input type="hidden" size="5" name="quantity" id="quantity" value="1" class="priced" />
+<input type="text" size="3" name="quantity" id="quantity" value="1" class="priced" />
 <input type="hidden" name="productname" id="productname" value="{{product.slug}}" />
 
 {% plugin_point "product_add_buttons" %}
