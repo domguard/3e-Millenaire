@@ -33,7 +33,7 @@ class ProductAdminForm(forms.ModelForm):
         queryset=SortedQueryset(Category.objects),
         widget=FilteredSelectMultiple('category', False)
     )
-    description = forms.TextField(widget=AdminTinyMCE(attrs={'cols': 80, 'rows': 30}))
+    #description = forms.TextField(widget=AdminTinyMCE(attrs={'cols': 80, 'rows': 30}))
     class Meta:
         model = Product
         
