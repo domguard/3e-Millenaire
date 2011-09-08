@@ -3,5 +3,5 @@ from django.shortcuts import redirect
 #from django.template import RequestContext
 
 def my404view(request):
-    return render_to_response('/')
+    return redirect('/')
 
