@@ -10,5 +10,5 @@ from satchmo_store.urls import urlpatterns
 
 urlpatterns += patterns('',
     url(r'^admin_tools/', include('admin_tools.urls')),
-    url(r'^liens.html$', direct_to_template, {'template': 'liens.html'}),
+    url(r'^liens.html$', direct_to_template, {'template': 'shop/liens.html'}),
 )
