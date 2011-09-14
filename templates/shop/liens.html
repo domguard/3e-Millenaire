@@ -1,0 +1,142 @@
+{% extends "shop/base.html" %}
+{% load i18n %}
+{% load thumbnail %}
+{% load satchmo_util %}
+
+{% block navbar %}
+   <li class="first">{% trans "Home" %}</li>
+{% endblock %}
+
+{% block content %}
+
+<h3>Liens</h3>
+
+
+<div class="inc public"><h2>Liens externes</h2><div class="links"><div class="link linksmall">
+<a href="http://www.waaaouh.com/annuaire/" target="_blank"><img src="{{ STATIC_ROOT }}links/link_54030.jpg" width="80" height="60"/></a>
+<a href="http://www.waaaouh.com/annuaire/" target="_blank">waaaouh : Les meilleurs sites web</a></div>
+<div class="link linksmall">
+<a href="http://www.astronomos.net/" target="_blank"><img src="{{ STATIC_ROOT }}links/link_53956.jpg" width="80" height="60"/></a>
+<a href="http://www.astronomos.net/" target="_blank">astronomos</a><br /><em>astrologie, entr'autre calcul de votre thème de naissance facile et rapide</em>
+
+</div>
+<div class="link linksmall">
+<a href="http://www.frequenceterre.com/presentation-frequence-terre.html" target="_blank"><img src="{{ STATIC_ROOT }}links/link_53954.jpg" width="80" height="60"/></a>
+<a href="http://www.frequenceterre.com/presentation-frequence-terre.html" target="_blank">FREQUENCE TERRE - la radio nature</a><br /><em>radio écologiste et musiques du monde</em>
+</div>
+<div class="link linksmall">
+<a href="http://www.freresdesetoiles.com/funnel_events/5817" target="_blank"><img src="{{ STATIC_ROOT }}links/link_53925.jpg" width="80" height="60"/></a>
+<a href="http://www.freresdesetoiles.com/funnel_events/5817" target="_blank">Daniel MEUROIS : Message des Frères des Étoiles (vidéo)</a><br /><em>channeling en vidéo : s'inscrire pour l'avoir en entier (+ d"une heure)</em>
+</div>
+<div class="link linksmall">
+<a href="http://www.crc-rose-croix.org/index.php?option=com_content&view=article&id=59&Itemid=28&lang=fr" target="_blank"><img src="{{ STATIC_ROOT }}links/link_53924.jpg" width="80" height="60"/></a>
+<a href="http://www.crc-rose-croix.org/index.php?option=com_content&view=article&id=59&Itemid=28&lang=fr" target="_blank">S.E.T.I. : Enseignement rosicrucien gratuit (Sauvegarde des Enseignements Traditionnels et Initiatiques)</a><br /><em>Les enseignements de Spencer LEWIS gratuits ...par le cénacle de la rose-croix.</em>
+
+</div>
+<div class="link linksmall">
+<a href="http://www.franc-maconnerie.org/" target="_blank"><img src="{{ STATIC_ROOT }}links/link_53858.jpg" width="80" height="60"/></a>
+<a href="http://www.franc-maconnerie.org/" target="_blank">FRANC-MACONNERIE</a><br /><em>http://www.franc-maconnerie.org/</em>
+</div>
+<div class="link linksmall">
+<a href="http://www.radiesthesiste.info/" target="_blank"><img src="{{ STATIC_ROOT }}links/link_53554.jpg" width="80" height="60"/></a>
+<a href="http://www.radiesthesiste.info/" target="_blank">site de Pascal Bogard, radiesthésiste dans la région d'aix en provence ou à distance</a><br /><em>RADIESTHESIE MAGNETISME ...............VOYANCE ENERGIE</em>
+</div>
+<div class="link linksmall">
+<a href="http://web.mac.com/laskoni/ecr-jkd/home.html" target="_blank"><img src="{{ STATIC_ROOT }}links/link_53616.jpg" width="80" height="60"/></a>
+<a href="http://web.mac.com/laskoni/ecr-jkd/home.html" target="_blank">Ecole du chêne et de la rivière - Art martiaux, Marseille</a><br /><em>Ecole d'arts martiaux sur marseille, et liens sur ce thème et autres proches.</em>
+
+</div>
+<div class="link linksmall">
+<a href="http://jpmallet.free.fr/" target="_blank"><img src="{{ STATIC_ROOT }}links/link_52392.jpg" width="80" height="60"/></a>
+<a href="http://jpmallet.free.fr/" target="_blank">le site de la quête du graal</a></div>
+<div class="link linksmall">
+<a href="http://annuaire.esopole.com" target="_blank"><img src="{{ STATIC_ROOT }}links/link_52403.jpg" width="80" height="60"/></a>
+<a href="http://annuaire.esopole.com" target="_blank">Annuaire Esopole</a><br /><em>L'annuaire esoterique francophone le plus complet</em>
+</div>
+<div class="link linksmall">
+<a href="http://votrebienetre.fr.gd/Page-d-h-accueil.htm" target="_blank"><img src="{{ STATIC_ROOT }}links/link_52663.jpg" width="80" height="60"/></a>
+<a href="http://votrebienetre.fr.gd/Page-d-h-accueil.htm" target="_blank">Votre bien-être</a><br /><em>Sylvie 
+Spécialiste du bien être au naturel
+Technicienne de médiation
+
+ 
+</em>
+
+</div>
+<div class="link linksmall">
+<a href="http://sylviecuisine.fr.gd/" target="_blank"><img src="{{ STATIC_ROOT }}links/link_52664.jpg" width="80" height="60"/></a>
+<a href="http://sylviecuisine.fr.gd/" target="_blank">la cuisine de sylvie</a><br /><em>la cuisine de sylvie (recettes, stages, ...)</em>
+</div>
+<div class="link linksmall">
+<a href="http://www.rennes-le-chateau-la-revelation.com/sommaire.htm" target="_blank"><img src="{{ STATIC_ROOT }}links/link_52667.jpg" width="80" height="60"/></a>
+<a href="http://www.rennes-le-chateau-la-revelation.com/sommaire.htm" target="_blank">rennes-le-chateau</a><br /><em>rennes-le-chateau site très complet créé par P. SILVAIN un spécialiste du sujet...</em>
+</div>
+<div class="link linksmall">
+<a href="http://yikingnet.free.fr/yikingfr/" target="_blank"><img src="{{ STATIC_ROOT }}links/link_52668.jpg" width="80" height="60"/></a>
+<a href="http://yikingnet.free.fr/yikingfr/" target="_blank">yi-king : tirage gratuit !</a><br /><em>tirage et interprétations du yi-king... très bon</em>
+
+</div>
+<div class="link linksmall">
+<a href="http://www.slowmotiondoomsday.com/boulay-index-fr.html" target="_blank"><img src="{{ STATIC_ROOT }}links/link_52669.jpg" width="80" height="60"/></a>
+<a href="http://www.slowmotiondoomsday.com/boulay-index-fr.html" target="_blank">LES SERPENTS ET LES DRAGONS VOLANTS</a><br /><em>livre introuvable, on line ; pour les amateurs de z.sitchin, a. parks, d. icke..</em>
+</div>
+<div class="link linksmall">
+<a href="http://www.ecoforum.fr/" target="_blank"><img src="{{ STATIC_ROOT }}links/link_52670.jpg" width="80" height="60"/></a>
+<a href="http://www.ecoforum.fr/" target="_blank">ecoforum</a><br /><em>association écologiste - marseille</em>
+</div>
+<div class="link linksmall">
+<a href="http://www.notre-planete.info/" target="_blank"><img src="{{ STATIC_ROOT }}links/link_52671.jpg" width="80" height="60"/></a>
+<a href="http://www.notre-planete.info/" target="_blank">notre planète info</a><br /><em>environnement, ecologie,.. excélent !</em>
+
+</div>
+<div class="link linksmall">
+<a href="http://www.terre.tv/" target="_blank"><img src="{{ STATIC_ROOT }}links/link_52672.jpg" width="80" height="60"/></a>
+<a href="http://www.terre.tv/" target="_blank">TERRE TV</a><br /><em>TV écolo sur le net</em>
+</div>
+<div class="link linksmall">
+<a href="http://citmonde.free.fr/" target="_blank"><img src="{{ STATIC_ROOT }}links/link_52673.jpg" width="80" height="60"/></a>
+<a href="http://citmonde.free.fr/" target="_blank">Citoyens du monde</a></div>
+<div class="link linksmall">
+<a href="http://www.nous-les-dieux.org/Salut_tout_le_monde" target="_blank"><img src="{{ STATIC_ROOT }}links/link_52676.jpg" width="80" height="60"/></a>
+<a href="http://www.nous-les-dieux.org/Salut_tout_le_monde" target="_blank">Nous les dieux</a><br /><em>vidéos, films,livres (audio,on line,pdf),conférences, etc.. INCONTOURNABLE !</em>
+</div>
+
+<div class="link linksmall">
+<a href="http://quanthomme.free.fr/" target="_blank"><img src="{{ STATIC_ROOT }}links/link_52677.jpg" width="80" height="60"/></a>
+<a href="http://quanthomme.free.fr/" target="_blank">Quant'homme</a><br /><em>energies libres et alternatives : excellent !</em>
+</div>
+<div class="link linksmall">
+<a href="http://membres.lycos.fr/endehors/page3.html" target="_blank"><img src="{{ STATIC_ROOT }}links/link_52678.jpg" width="80" height="60"/></a>
+<a href="http://membres.lycos.fr/endehors/page3.html" target="_blank">zen,taoisme,anarchisme</a></div>
+<div class="link linksmall">
+<a href="http://www.keny-arkana.com/ecoutes/index.php" target="_blank"><img src="{{ STATIC_ROOT }}links/link_52684.jpg" width="80" height="60"/></a>
+<a href="http://www.keny-arkana.com/ecoutes/index.php" target="_blank">keny arkana - site officiel</a><br /><em>rappeuse marseillaise - vous n'aimez pas le rap? tant pis, écouter et vous aimerez..et voir les texte sur les liens ci-dessous</em>
+</div>
+<div class="link linksmall">
+
+<a href="http://www.rap2france.com/paroles-keny-arkana.php" target="_blank"><img src="{{ STATIC_ROOT }}links/link_52685.jpg" width="80" height="60"/></a>
+<a href="http://www.rap2france.com/paroles-keny-arkana.php" target="_blank">keny arkana - textes</a></div>
+<div class="link linksmall">
+<a href="http://tvbruits.org/spip.php?article983" target="_blank"><img src="{{ STATIC_ROOT }}links/link_52686.jpg" width="80" height="60"/></a>
+<a href="http://tvbruits.org/spip.php?article983" target="_blank">Keny arkana - un autre mondes est possible (video 61 mn)</a><br /><em>documentaire, réalisé entr'autre par keny arkana..
+tout est dans le titre ;o))A VOIR(DVD disponible en bonus avec son 1er CD)</em>
+</div>
+<div class="link linksmall">
+<a href="http://www.pointvoyance.com" target="_blank"><img src="{{ STATIC_ROOT }}links/link_52711.jpg" width="80" height="60"/></a>
+<a href="http://www.pointvoyance.com" target="_blank">annuaire ésotérique</a></div>
+<div class="link linksmall">
+<a href="http://www.urantia.fr" target="_blank"><img src="{{ STATIC_ROOT }}links/link_52796.jpg" width="80" height="60"/></a>
+<a href="http://www.urantia.fr" target="_blank">livre d'urantia en HTML ou/et PDF</a><br /><em>http://www.urantia.fr</em>
+
+</div>
+<div class="link linksmall">
+<a href="http://www.liloumace.com/FR-l-ADN-est-sensible-a-l-intention,-la-pensee-flexible-et-vibratoire-Kishori-Aird_a502.html" target="_blank"><img src="{{ STATIC_ROOT }}links/link_53555.jpg" width="80" height="60"/></a>
+<a href="http://www.liloumace.com/FR-l-ADN-est-sensible-a-l-intention,-la-pensee-flexible-et-vibratoire-Kishori-Aird_a502.html" target="_blank">Kishori Aird : «L'ADN démystifié» et ses techniques</a><br /><em>video 1/2</em>
+</div>
+<div class="link linksmall">
+<a href="http://www.liloumace.com/FR-Point-Zero-Le-pouvoir-et-le-mouvement-convergent-du-point-zero-Kishori-Aird_a503.html" target="_blank"><img src="{{ STATIC_ROOT }}links/link_53556.jpg" width="80" height="60"/></a>
+<a href="http://www.liloumace.com/FR-Point-Zero-Le-pouvoir-et-le-mouvement-convergent-du-point-zero-Kishori-Aird_a503.html" target="_blank">Kishori Aird : «L'ADN démystifié» et ses techniques</a><br /><em>vidéo 2/2</em>
+</div>
+</div></div>
+
+{% endblock %}

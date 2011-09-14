@@ -13,13 +13,15 @@
 <div id="bienvenue"></div>
 
 
-<h4 style="text-align: center;"><img width="60" hspace="15" height="68" align="left" alt="" src="/static/img/tibruno.gif" />ATTENTION !</h4>
+<h4 style="text-align: center;"><img width="60" hspace="15" height="68" align="left" alt="" src="{{STATIC_ROOT}}img/tibruno.gif" />ATTENTION !</h4>
 <p>Actuellement, le magasin est ouvert du mardi au samedi de 10h &agrave; 13h et de 15h &agrave; 19h (horaires d'&eacute;t&eacute;)</p>
 <p>&nbsp;</p>
 
 
 {% if all_products_list %}
+<div class="featured">
     <h4>{% trans "Featured Items" %}</h4>
+    
     {% for product in all_products_list %} 
             <div class = "productImage">    
            {% if product.main_image %}
@@ -31,6 +33,7 @@
             <p><a href="{{ product.get_absolute_url }}">{{ product.translated_name }}</a></p>
         </div>
     {% endfor %}
+ </div>   
 {% endif %}
 
     {% if is_paginated %}
@@ -58,19 +61,30 @@
     {% endif %}
 
 <p>&nbsp;</p>
-<p style="text-align: center;"><em><strong>REGLEMENT SECURISE PAR CB OU PAYPAL (dans les 2 cas passage par le site s&eacute;curis&eacute; de paypal)<br />
+<p style="text-align: center;"><em><strong>REGLEMENT SECURISE PAR CB OU PAYPAL 
+    (dans les 2 cas passage par le site s&eacute;curis&eacute; de paypal)<br />
 </strong></em></p>
-<h4 style="text-align: center;"><em><strong>une rubrique OCCASION (voir colonne de gauche ou cliquez </strong></em><a href="http://www.3emillenaire.fr/occasions.html"><em><strong>ICI</strong></em></a><em><strong> ) . Livres, revues, CD ou DVD &agrave; partir de 1 &euro;, et toujours 5% de remise dans le panier...!</strong></em><a href="http://&lt;a href=&quot;http://www.petitfute.com/guide/232178-librairie-esoterique-3e-millenaire#xtor=EREC-116&quot;&gt; &lt;img src=&quot;http://www.petitfute.com/media/plaque2011.png&quot;/&gt;&lt;/a&gt;"><font style="color: rgb(0, 0, 255);"><b><br />
+<h4 style="text-align: center;"><em><strong>une rubrique OCCASION (voir colonne de gauche ou cliquez </strong>
+    </em><a href="http://www.3emillenaire.fr/categorie/occasions/"><em><strong>ICI</strong></em></a><em><strong> ) . 
+        Livres, revues, CD ou DVD &agrave; partir de 1 &euro;, et toujours 5% de remise dans le panier...!</strong></em>
+
 </b></font></a></h4>
 <p align="left">Sur le web depuis 1998, il &eacute;tait temps pour notre boutique de profiter d'une bonne mise &agrave; jour....</p>
 <p>C'est fait, et nous esperons que vous aurez plaisir &agrave; parcourir les rubriques de notre catalogue en ligne. La gestion des commandes a &eacute;volu&eacute; &eacute;galement, mais nous pr&eacute;f&eacute;rons toujours le contact direct aux cartes bleues !</p>
-<p>Une grande place &agrave; &eacute;t&eacute; faite aux <a href="http://www.3emillenaire.fr/produits/bien_etre.html">Produits de Bien-&Ecirc;tre</a> dans cette nouvelle boutique, car nous avons &agrave; coeur de suivre les nouvelles demandes de nos clients en ce qui concerne l'<a href="http://www.3emillenaire.fr/produits/bien_etre/aromatherapie.html">Aromath&eacute;rapie</a>, le <a href="http://www.3emillenaire.fr/produits/bien_etre/feng_shui.html">Feng-Shui</a> ...</p>
-<p>Au niveau de la librairie, que nos habitu&eacute;s se rassurent, les collections rares sont toujours l&agrave;, et nous mettrons p&eacute;riodiquement &agrave; jour le catalogue.</p>
+<p>Une grande place &agrave; &eacute;t&eacute; faite aux 
+    <a href="http://www.3emillenaire.fr/categorie/cat_produits/bien_etre/">Produits de Bien-&Ecirc;tre</a> dans cette nouvelle boutique, 
+    car nous avons &agrave; coeur de suivre les nouvelles demandes de nos clients en ce qui concerne 
+    l'<a href="http://www.3emillenaire.fr/categorie/cat_produits/bien_etre/aromatherapie/">Aromath&eacute;rapie</a>, 
+    le <a href="http://www.3emillenaire.fr/categorie/cat_produits/bien_etre/produits_feng_shui/">Feng-Shui</a> ...</p>
+<p>Au niveau de la librairie, que nos habitu&eacute;s se rassurent, les collections rares sont toujours l&agrave;, 
+    et nous mettrons p&eacute;riodiquement &agrave; jour le catalogue.</p>
 <p>Bonne d&eacute;couverte !</p>
 <p align="right"><strong><em>Bruno Deleuze&nbsp;  &nbsp;&nbsp;  &nbsp;&nbsp;  </em></strong></p>
-<p style="text-align: left;"><strong><em>Autre site avec d&eacute;finitions des m&eacute;thodes de voyanvces et cartomancie : </em></strong><a href="http://www.one-voyance.com/cartomancie"><em><strong>cliquez ici</strong></em></a><strong><em><br />
+<p style="text-align: left;"><strong><em>Autre site avec d&eacute;finitions des m&eacute;thodes 
+    de voyanvces et cartomancie : </em></strong><a href="http://www.one-voyance.com/cartomancie"><em>
+        <strong>cliquez ici</strong></em></a><strong><em><br />
 </em></strong></p>
-<p align="left"><strong><em>JUILLET 2011 : ATTENTION !<br />
+<p align="left"><strong><em>Septembre 2011 : Migration du site sur un nouveau système.<br />
 Si vous rencontrez des bugs, merci de nous en faire part via <a href="/contact/">email&nbsp;</a> , t&eacute;l. : 33(0)4.91.55.09.62 ou FAX : 33(0)4.91.33.66.85<br />
 </em></strong></p>
 <h1><em><strong><br />
