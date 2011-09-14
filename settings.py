@@ -35,6 +35,7 @@ SITE_ID = 1
 # from satchmo_utils.thumbnail import normalize_path
 # MEDIA_ROOT = normalize_path(os.path.join(DIRNAME, 'static/'))
 MEDIA_ROOT = os.path.join(DIRNAME, 'static/')
+STATIC_ROOT = os.path.join(DIRNAME, 'static/')
 
 # URL that handles the media served from MEDIA_ROOT.
 # Example: "http://media.lawrence.com"
