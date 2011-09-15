@@ -896,6 +896,12 @@ a.bouton, .bouton,
 	background-color: #a78055;
 }
 
+.featured{
+	display: block;
+	float: none;
+	clear: both;
+}
+
 #laposte_tarif_inner,#grand_total
 {
 	background-color: #fdeedd;
