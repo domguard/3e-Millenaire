@@ -15,7 +15,7 @@ class SortedQueryset:
         
     def all(self):
         #Permet de trier les catégories par le chemin complet (parents inclus)
-        items = list(self.qs.all()[:10])
+        items = list(self.qs.all())
         def sort_by_unicode(x): return unicode(x)
         items.sort(key=sort_by_unicode)
         for i in items:
@@ -44,7 +44,7 @@ class ProductAdminForm(forms.ModelForm):
         queryset=SortedQueryset(Category.objects),
         widget=FilteredSelectMultiple('category', False)
     )
-    #description = forms.CharField(widget=AdminTinyMCE(attrs={'cols':80,'rows':20}))
+    description = forms.CharField(widget=AdminTinyMCE(attrs={'cols':80,'rows':20}))
     class Meta:
         model = Product
 
@@ -60,7 +60,7 @@ class ProductAdmin(ProductOptions):
             (_('Meta Data'), {'fields': ('meta',), 'classes': ('collapse',)}),
             (_('Item Dimensions'), {'fields': (('length', 'length_units','width','width_units','height','height_units'),('weight','weight_units'))}),
             (_('Tax'), {'fields':('taxable', 'taxClass'), 'classes': ('collapse',)}),
-            (_('Related Products'), {'fields':('related_items','also_purchased')}), 
+            (_('Related Products'), {'fields':('related_items',)}), 
             )
     filter_horizontal = ('related_items','also_purchased')
             
