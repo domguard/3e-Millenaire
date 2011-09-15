@@ -17,23 +17,21 @@
 <p>Actuellement, le magasin est ouvert du mardi au samedi de 10h &agrave; 13h et de 15h &agrave; 19h (horaires d'&eacute;t&eacute;)</p>
 <p>&nbsp;</p>
 
-
 {% if all_products_list %}
-<div class="featured">
-    <h4>{% trans "Featured Items" %}</h4>
-    
+<div id="product_category">
+    <h4>Nouveautés, à voir :</h4>
+    <ul> 
     {% for product in all_products_list %} 
-            <div class = "productImage">    
+           <li>
            {% if product.main_image %}
-              <center>
               {% thumbnail product.main_image.picture 85x85 as image %}
               <a href="{{ product.get_absolute_url }}"><img src="{{ image }}" width="{{ image.width }}" height="{{ image.height }}" /></a>
-              </center>
            {% endif %}     
-            <p><a href="{{ product.get_absolute_url }}">{{ product.translated_name }}</a></p>
-        </div>
+            <a href="{{ product.get_absolute_url }}">{{ product.translated_name }}</a>
+            </li>
+        </ul>
     {% endfor %}
- </div>   
+    </ul> </div> 
 {% endif %}
 
     {% if is_paginated %}
@@ -65,8 +63,8 @@
     (dans les 2 cas passage par le site s&eacute;curis&eacute; de paypal)<br />
 </strong></em></p>
 <h4 style="text-align: center;"><em><strong>une rubrique OCCASION (voir colonne de gauche ou cliquez </strong>
-    </em><a href="http://www.3emillenaire.fr/categorie/occasions/"><em><strong>ICI</strong></em></a><em><strong> ) . 
-        Livres, revues, CD ou DVD &agrave; partir de 1 &euro;, et toujours 5% de remise dans le panier...!</strong></em>
+    </em><a href="http://www.3emillenaire.fr/categorie/occasions/"><em><strong>ICI</strong></em></a><em><strong> ).<br/> 
+        Livres, revues, CD ou DVD &agrave; partir de 1 &euro;</strong></em>
 
 </b></font></a></h4>
 <p align="left">Sur le web depuis 1998, il &eacute;tait temps pour notre boutique de profiter d'une bonne mise &agrave; jour....</p>
