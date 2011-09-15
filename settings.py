@@ -35,7 +35,6 @@ SITE_ID = 1
 # from satchmo_utils.thumbnail import normalize_path
 # MEDIA_ROOT = normalize_path(os.path.join(DIRNAME, 'static/'))
 MEDIA_ROOT = os.path.join(DIRNAME, 'static/')
-#STATIC_ROOT = os.path.join(DIRNAME, 'static/')
 
 # URL that handles the media served from MEDIA_ROOT.
 # Example: "http://media.lawrence.com"
@@ -159,6 +158,16 @@ AUTHENTICATION_BACKENDS = (
     'satchmo_store.accounts.email-auth.EmailBackend',
     'django.contrib.auth.backends.ModelBackend',
 )
+
+
+TINYMCE_DEFAULT_CONFIG = {
+    'theme':"advanced", 
+    'relative_urls': False,
+    'theme_advanced_toolbar_location' : 'top',
+    'theme_advanced_buttons1':'bold,italic,|,justifyleft,justifycenter,justifyright,|,bullist,numlist,|,link,unlink',
+    'theme_advanced_buttons2':'', 'theme_advanced_buttons3':''
+    }
+    
 
 #DEBUG_TOOLBAR_CONFIG = {
 #    'INTERCEPT_REDIRECTS' : False,
