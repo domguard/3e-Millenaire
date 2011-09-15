@@ -37,8 +37,9 @@
     
 
     <th width="300">{% trans "Item" %}</th>
+    
+    <th align="center">{% trans "Quantity" %}</th>
     <th></th>
-    <th align="left">{% trans "Quantity" %}</th>
     
     {% if sale %}
 		<th>{% trans "Regular Price" %}</th>
@@ -63,12 +64,12 @@
                     <form class="qtyform" id="form-{{ cartitem.id }}" action="{% url satchmo_cart_set_qty %}" method="post">{% csrf_token %}
                         <input type="hidden" name="cartitem" value="{{ cartitem.id }}" />
     					<input type="text" name="quantity" id="id_quantity" value="{{ cartitem.quantity|normalize_decimal }}" />
-                        <input type="submit" id="id_update_submit" value="{% trans 'update amount' %}" />
+                        <input type="submit" id="id_update_submit" value="ok" />
                     </form>
                 </td>   
                 
                 
-        <td width="20">
+        <td width="20" align="center">
                 <form action="{% url satchmo_cart_remove %}"  method="post">{% csrf_token %}
                      <input type="hidden" name="cartitem" value="{{ cartitem.id }}" />
                      <a href="#" class="item_remove">

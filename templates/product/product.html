@@ -34,9 +34,11 @@ ProductVariations or CustomProducts, look for product/detail_xxx.html
 {% block productdetail %}
 <h3>{{ product.translated_name }}</h3>
 
-<form id="options" action="{% url satchmo_smart_add %}" method="post">{% csrf_token %}
 
 <br/>
+
+<form id="options" action="{% url satchmo_smart_add %}" method="post">{% csrf_token %}
+
 <table border="0"><tr><td>
     
 {% for pic in product.productimage_set.all %}
@@ -56,27 +58,50 @@ ProductVariations or CustomProducts, look for product/detail_xxx.html
     
 <p>{{ product.translated_description }}</p>
 
+
+{% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
+
+
+    
 <div id="price_addcart">
+
+    <input type="text" size="3" name="quantity" id="quantity" value="1" class="priced"/>
 
 	{% if sale %}<strike id="fullprice" style="display: block;">{{ product|discount_price:""|currency }}</strike>{% endif %}
 	<span id="price">{{ product|discount_price:sale|currency }}</span>
 
-<br/>
-<img class="addcart" src="/static/img/panier.gif" border="0" onclick="$('#options').submit();"/>
+    <br/>
+    <img class="addcart" src="/static/img/panier.gif" border="0" onclick="$('#options').submit();"/>
+
 
 </div>
 
 </td></tr>
 </table>
-
-
-{% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
-<input type="text" size="3" name="quantity" id="quantity" value="1" class="priced" />
 <input type="hidden" name="productname" id="productname" value="{{product.slug}}" />
-
 {% plugin_point "product_add_buttons" %}
 {% plugin_point "product_form" %}
+
+
 </form>
+
+
+{% if product.related_items %}
+<br/><br/>
+<div id="product_category">
+    <h4>Vous pourriez être également intéressé par ...</h4>
+    
+    {% for product in  product.related_items.all %} 
+        {% if forloop.first %} <ul>  {% endif %}
+            <li>{% thumbnail product.main_image.picture 120x120 as image %}
+            <a href="{{ product.get_absolute_url }}"><img src="{{ image }}" width="{{ image.width }}" height="{{ image.height }}" /></a>
+            <a href="{{ product.get_absolute_url }}">{{ product.translated_name }}</a></li>
+        {% if forloop.last %} </ul> {% endif %}
+    {% endfor %}
+</div>
+{% endif %}
+
+
 {% endblock %}
 
 {% block productfooter %}

@@ -1,0 +1,23 @@
+.selector {
+    width: 900px;
+}
+
+.selector-available, .selector-chosen {
+    width: 420px;
+	border: 1px solid #ccc;
+}
+
+.selector ul.selector-chooser {
+	margin: 8em 10px 0;
+
+}
+
+.selector select {
+    margin-bottom: 5px;
+    margin-top: 0;
+	width: 420px;
+}
+
+a.selector-chooseall, a.selector-clearall {
+    width: 12em;
+}

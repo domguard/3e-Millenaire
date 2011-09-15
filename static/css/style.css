@@ -1,6 +1,7 @@
 /* @override 
 	http://dev.quinode.fr:8000/static/css/style.css
 	http://www.3emillenaire.fr/static/css/style.css
+	http://localhost:8000/static/css/style.css
 */
 
 /* structure
@@ -86,8 +87,10 @@ ul.tree li.last {
   }
 
   .qtyform #id_quantity {
-      width: 5em;
-  }
+      width: 30px;
+	text-align: center;
+}
+
 
   #payment ul li{
       list-style-type: none;
@@ -503,6 +506,13 @@ a:hover, a.uplink:hover {
 --------------------------------- */
 acronym {border-width:0;}
 
+#quantity{
+	font-size: 15px;
+	text-align: center;
+	width: 30px;
+	height: 24px;
+}
+
 /* @group checkout */
 
 .ordertable{
@@ -890,5 +900,19 @@ a.bouton, .bouton,
 {
 	background-color: #fdeedd;
 }
+
+
+.ordertable input[type=submit]#id_update_submit{
+	display: inline;
+	font-weight: bold;
+	font-style: italic;
+	margin-top: 0;
+	font-size: 12px;
+	margin: 0;
+	padding: 3px;
+}
+
+
+
 
 /* @end */
