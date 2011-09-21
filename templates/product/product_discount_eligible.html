@@ -1,0 +1,6 @@
+{% load i18n %}
+<div class="reduc">
+{% with sale.percentage_text as pct %}
+Une réduction de {{ pct }} sera automatiquement appliquée sur cet article dans votre panier de commande lors de la validation de la commande.</p>
+{% endwith %}
+</div>

@@ -67,8 +67,8 @@ ProductVariations or CustomProducts, look for product/detail_xxx.html
 
     <input type="text" size="3" name="quantity" id="quantity" value="1" class="priced"/>
 
-	{% if sale %}<strike id="fullprice" style="display: block;">{{ product|discount_price:""|currency }}</strike>{% endif %}
-	<span id="price">{{ product|discount_price:sale|currency }}</span>
+	{% if sale %}<strike id="fullprice">{{ product|discount_price:""|currency }}</strike>{% endif %}
+	<span id="price">Avec réduction de 5% : <b>{{ product|discount_price:sale|currency }}</b></span>
 
     <br/>
     <img class="addcart" src="/static/img/panier.gif" border="0" onclick="$('#options').submit();"/>

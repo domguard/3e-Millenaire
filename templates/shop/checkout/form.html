@@ -86,4 +86,13 @@ Avoir un compte n'est pas obligatoire pour commander sur le site.
 	<tr><td></td><td><input type="submit" value="{% trans "Continue Checkout" %}"/></td></tr>
 </table>
 </form>
+
+
+<script type="text/javascript">
+$(function(){
+    trreduc = $('#id_discount').parent('td').parent('tr');
+    trreduc.hide();
+    trreduc.prev('tr').hide();
+});
+</script>
 {% endblock %}

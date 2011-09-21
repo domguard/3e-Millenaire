@@ -53,14 +53,14 @@
 
     {% for cartitem in cart %}
         <tr>
-            <td width="65%">
+            <td>
                 
                {% thumbnail cartitem.product.main_image.picture 120x120 as image %}
                <a class="cartitem" href="{{cartitem.product.get_absolute_url}}">
                 <img src="{{ image }}" width="{{ image.width }}" height="{{ image.height }}" border="0" class="cartimg"/>
                 {{ cartitem.description }}</a></td>
                 
-                <td align="center">
+                <td align="center" width="65">
                     <form class="qtyform" id="form-{{ cartitem.id }}" action="{% url satchmo_cart_set_qty %}" method="post">{% csrf_token %}
                         <input type="hidden" name="cartitem" value="{{ cartitem.id }}" />
     					<input type="text" name="quantity" id="id_quantity" value="{{ cartitem.quantity|normalize_decimal }}" />
@@ -69,7 +69,7 @@
                 </td>   
                 
                 
-        <td width="20" align="center">
+        <td width="30" align="center">
                 <form action="{% url satchmo_cart_remove %}"  method="post">{% csrf_token %}
                      <input type="hidden" name="cartitem" value="{{ cartitem.id }}" />
                      <a href="#" class="item_remove">
@@ -79,9 +79,9 @@
                 
                 
                 
-			{% if sale %}<td align="center">{{ cartitem.product.unit_price|currency }}</td>{% endif %}
-			<td align="center">{{ cartitem.product|discount_price:sale|currency }}</td>
-            <td align="center">{{ cartitem|discount_line_total:sale|currency }}</td>
+			{% if sale %}<td  width="65" align="center">{{ cartitem.product.unit_price|currency }}</td>{% endif %}
+			<td  width="65" align="center">{{ cartitem.product|discount_price:sale|currency }}</td>
+            <td  width="65" align="center">{{ cartitem|discount_line_total:sale|currency }}</td>
         </tr>
 		{% cartitem_custom_details cartitem %}
 		{% cartitem_subscription_details cartitem %}
@@ -104,6 +104,7 @@
                 //alert('bin');
             }
         });
+        
     });
     </script>
     

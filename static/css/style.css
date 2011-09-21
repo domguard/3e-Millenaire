@@ -87,8 +87,9 @@ ul.tree li.last {
   }
 
   .qtyform #id_quantity {
-      width: 30px;
+      width: 15px;
 	text-align: center;
+	font-size: 12px;
 }
 
 
@@ -791,14 +792,34 @@ img.addcart{
 #price {
 	background-color: #effcd0;
 	border: 1px solid #ccc789;
-	padding: 7px 15px;
-	width: 60px;
+	padding: 7px 10px;
 	text-align: right;
+	display: inline-block;
+	margin-top: 10px;
 	margin-right: 20px;
+	margin-bottom: 10px;
+}
+
+#fullprice {
+	background-color: #eaeaea;
+	border: 1px solid #ccc789;
+	padding: 7px 10px;
+	width: 60px;
 	font-weight: bold;
 	display: inline-block;
 	margin-top: 10px;
 	margin-bottom: 10px;
+	color: #8a8a8a;
+}
+
+.reduc{
+	font-style: italic;
+	font-size: 11px;
+	text-align: right;
+}
+
+.saleprice{
+	display: none;
 }
 
 .ct_item {
