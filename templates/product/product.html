@@ -86,7 +86,7 @@ ProductVariations or CustomProducts, look for product/detail_xxx.html
 </form>
 
 
-{% if product.related_items %}
+{% if product.related_items.exists %}
 <br/><br/>
 <div id="product_category">
     <h4>Vous pourriez être également intéressé par ...</h4>

@@ -813,9 +813,12 @@ img.addcart{
 }
 
 .reduc{
+	
 	font-style: italic;
 	font-size: 11px;
 	text-align: right;
+	margin-top: 20px;
+	margin-right: 30px;
 }
 
 .saleprice{
