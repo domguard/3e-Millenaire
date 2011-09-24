@@ -93,6 +93,8 @@ TEMPLATE_DIRS = (
     os.path.join(DIRNAME,'templates'),
 )
 
+AUTOCOMPLETE_MEDIA_PREFIX = '/static/autocomplete/media/'
+
 INSTALLED_APPS = (
     'admin_tools',
     'admin_tools.theming',
@@ -151,7 +153,8 @@ INSTALLED_APPS = (
     'quinode_shipping',
     #'south',
     'django_extensions',
-    'tinymce'
+    'tinymce',
+    'autocomplete'
 )
 
 AUTHENTICATION_BACKENDS = (

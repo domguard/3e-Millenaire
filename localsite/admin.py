@@ -39,6 +39,16 @@ def cat_principale(obj):
 cat_principale.short_description = 'Catégorie'
 
 
+
+from autocomplete.views import autocomplete, AutocompleteSettings
+from autocomplete.admin import AutocompleteAdmin
+    
+class RelAutocomplete(AutocompleteSettings):
+    search_fields = ('^name',)
+    
+autocomplete.register(Product.related_items, RelAutocomplete) 
+
+
 class ProductAdminForm(forms.ModelForm):
     category = forms.ModelMultipleChoiceField(
         queryset=SortedQueryset(Category.objects),
@@ -49,7 +59,7 @@ class ProductAdminForm(forms.ModelForm):
         model = Product
 
 
-class ProductAdmin(ProductOptions):
+class ProductAdmin(AutocompleteAdmin,ProductOptions):
     form = ProductAdminForm
     list_display = ('name','active','featured', prix_lisible,cat_principale)
     list_display_links = ('name',)
