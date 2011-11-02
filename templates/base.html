@@ -19,41 +19,41 @@
 <div id="container">    
     <img id="tip" src="/static/img/bg_quicksum.gif"/ alt="utilisez le menu ci-dessous pour naviguer dans les catégories">
     <div id="intro">
-		<div id="pageHeader">
-			<a href="/index.html"><h1><span>{{ shop_name }}</span></h1>
-			<h2><span>Votre librairie &eacute;sot&eacute;rique &agrave; Marseille et sur le web</span></h2></a>
-			
-			
-			<ul id="news" style="display:none">
-        	<li>&laquo;Il ya 4 pens&#233;es illimit&#233;es : l'amour, la compassion, la joie et l'&#233;galit&#233; d'&#226;me.&raquo; Bouddha</li>
-        	<li>&laquo;La Terre est ma patrie et l'humanit&eacute; ma famille&raquo; Khalil Gibran</li>
-        	<li>An apple a day keeps the doctor away</li>
-        	</ul>
-	
-		</div>
+        <div id="pageHeader">
+            <a href="/index.html"><h1><span>{{ shop_name }}</span></h1>
+            <h2><span>Votre librairie &eacute;sot&eacute;rique &agrave; Marseille et sur le web</span></h2></a>
+            
+            
+            <ul id="news" style="display:none">
+            <li>&laquo;Il ya 4 pens&#233;es illimit&#233;es : l'amour, la compassion, la joie et l'&#233;galit&#233; d'&#226;me.&raquo; Bouddha</li>
+            <li>&laquo;La Terre est ma patrie et l'humanit&eacute; ma famille&raquo; Khalil Gibran</li>
+            <li>An apple a day keeps the doctor away</li>
+            </ul>
+    
+        </div>
 
-		<div id="navbar">
-	
-        	    <ul>
-        	    	{% block navbar %}Breadcrumbs here{% endblock %}
-        	   	</ul>
+        <div id="navbar">
+    
+                <ul>
+                    {% block navbar %}Breadcrumbs here{% endblock %}
+                </ul>
 
-		</div>
-	</div>
+        </div>
+    </div>
     
 
 
     <div id="sidebar-secondary">
-		{% block sidebar-secondary %}
+        {% block sidebar-secondary %}
 
-		<div>
-			{% block sidebar %}
-			{% block sidebar-categories %}
-			<div id="menu_container">
-			    
-			    
-			    <ul class="nosub"><li><a href="/">Accueil</a></li></ul>
-			        
+        <div>
+            {% block sidebar %}
+            {% block sidebar-categories %}
+            <div id="menu_container">
+                
+                
+                <ul class="nosub"><li><a href="/">Accueil</a></li></ul>
+                    
                 {% if category.id %}
                     {% category_tree category.id %}
                 {% else %}
@@ -67,7 +67,7 @@
                  
                  <li>
                      {% url satchmo_contact as contact_url %}
-             	    {% if contact_url %}<a href="{{ contact_url }}">{% trans "Contact Us" %}</a>{% endif %}   
+                    {% if contact_url %}<a href="{{ contact_url }}">{% trans "Contact Us" %}</a>{% endif %}   
                     
                 </li>
                 <li><a href="/liens.html">Liens externes</a></li>
@@ -79,49 +79,49 @@
                 </ul>    
                 
                 
-			</div>
-			
-			
-			<a id="fute" href="http://www.petitfute.com/guide/232178-librairie-esoterique-3e-millenaire?keyword=MILLENAIRE%20MARSEILLE&c=525">
+            </div>
+            
+            
+            <a id="fute" href="http://www.petitfute.com/guide/232178-librairie-esoterique-3e-millenaire?keyword=MILLENAIRE%20MARSEILLE&c=525">
             <img src="http://www.petitfute.com/media/plaque2011.png"/></a>
-			
-			{% endblock sidebar-categories %}
-			
-			{% block sidebar-secondary-bottom %}
-			{% plugin_point "sidebar_secondary_bottom" %}
-			{% endblock %}
-			{% endblock sidebar %}
-		</div>
-		{% endblock sidebar-secondary %}
-	</div>
+            
+            {% endblock sidebar-categories %}
+            
+            {% block sidebar-secondary-bottom %}
+            {% plugin_point "sidebar_secondary_bottom" %}
+            {% endblock %}
+            {% endblock sidebar %}
+        </div>
+        {% endblock sidebar-secondary %}
+    </div>
 
-	<div id="sidebar-primary">{# rightnav #}
-		{% block sidebar-primary %}
-		<h3>{% trans "Quick Links" %}</h3>
-		{% url satchmo_product_recently_added as recenturl %}
-		{% if recenturl %}<a href="{{ recenturl }}">{% trans "Recently Added" %}</a>{% endif %}
-		{% url satchmo_product_best_selling as popularurl %}
-		{% if popularurl %}<br/><a href="{{ popularurl }}">{% trans "Best Sellers" %}</a>{% endif %}
+    <div id="sidebar-primary">{# rightnav #}
+        {% block sidebar-primary %}
+        <h3>{% trans "Quick Links" %}</h3>
+        {% url satchmo_product_recently_added as recenturl %}
+        {% if recenturl %}<a href="{{ recenturl }}">{% trans "Recently Added" %}</a>{% endif %}
+        {% url satchmo_product_best_selling as popularurl %}
+        {% if popularurl %}<br/><a href="{{ popularurl }}">{% trans "Best Sellers" %}</a>{% endif %}
         {% url satchmo_category_index as category_index %}
         {% if category_index %} <!--<a href="{{ category_index }}">{% trans "Category Index" %}</a>--> {% endif %}
 
-		{% plugin_point "sidebar_links" %}
-	
-	    <h3>{% trans "Account Information" %}</h3>
-	    {% if user.is_staff %}
-		<a href="{% url admin:index %}" target="blank">{% trans "Admin" %}</a>
-		{% endif %}
-	    {% if user.is_authenticated %}
-		{% url satchmo_account_info as accounturl %}
+        {% plugin_point "sidebar_links" %}
+    
+        <h3>{% trans "Account Information" %}</h3>
+        {% if user.is_staff %}
+        <a href="{% url admin:index %}" target="blank">{% trans "Admin" %}</a>
+        {% endif %}
+        {% if user.is_authenticated %}
+        {% url satchmo_account_info as accounturl %}
         {% if accounturl %}<a href="{{ accounturl }}" target="blank" id="profile_link">{% trans "Account Details" %}</a><br/>{% endif %}
             <a href="{{ logout_url }}?next={{request.path}}">{% trans "Log out" %}</a>
-	    {% else %}
+        {% else %}
             <a href="{{ login_url }}?next={{request.path}}" id="profile_link">{% trans "Log in" %}</a>
-	    {% endif %}
+        {% endif %}
 
-		{% url satchmo_cart as carturl %}
-	    {% if carturl %}<a href="{{ carturl }}" id="cart_link">Votre panier  
-	        {% if not cart.is_empty %}
+        {% url satchmo_cart as carturl %}
+        {% if carturl %}<a href="{{ carturl }}" id="cart_link">Votre panier  
+            {% if not cart.is_empty %}
                 ({% if sale %}{{ cart|discount_cart_total:sale|currency }}{% else %}{{cart.total|currency}}{% endif%})
             {% endif%}
             </a>
@@ -129,44 +129,44 @@
         {% if not cart.is_empty %}       
             {% url satchmo_checkout-step1 as checkouturl %}
             {% if checkouturl %}<a href="{{ checkouturl }}" id="checkout_link">{% trans "Check out" %}</a>{% endif %}
-	    {% endif %}
-	    	
-		{% plugin_point "shop_sidebar_actions" %}
+        {% endif %}
+            
+        {% plugin_point "shop_sidebar_actions" %}
     
-		
+        
 
-		{% satchmo_language_selection_form %}
+        {% satchmo_language_selection_form %}
 
-		{% block sidebar-primary-bottom %}
-		{% plugin_point "shop_sidebar_primary" %}
-		{% endblock %}
-		{% endblock sidebar-primary %}
-	</div>
+        {% block sidebar-primary-bottom %}
+        {% plugin_point "shop_sidebar_primary" %}
+        {% endblock %}
+        {% endblock sidebar-primary %}
+    </div>
 
-	<div id="content">
-	    {% block content %}{% endblock %}
-	</div>
+    <div id="content">
+        {% block content %}{% endblock %}
+    </div>
 
-	<div id="footer">
-		{% block footer %}
+    <div id="footer">
+        {% block footer %}
 
-		&copy; 2011 - Librairie 3e Millénaire |
+        &copy; 2011 - Librairie 3e Millénaire |
         <a href="http://www.quinode.fr/">Création de site Django</a> | Boutique propulsée par <a href="http://www.satchmoproject.com">Satchmo</a>
         |
         <a href="/admin/">Admin</a>
-		
-		
-		{% endblock %}
-	</div>
+        
+        
+        {% endblock %}
+    </div>
 
     </div>
-	{% block page-close %}
+    {% block page-close %}
     {% block google-tracker %}
     {% if shop.options.GOOGLE.ANALYTICS.value %}
         {% show_tracker is_secure %}
     {% endif %}
     {% endblock %}
-	{% endblock %}
+    {% endblock %}
 
 
 </div>
@@ -174,11 +174,11 @@
 <script type="text/javascript" src="/static/js/jquery.newsticker.js"></script>
 <script type="text/javascript">
 $(document).ready(
-	function()
-	{
-		$("#news").newsTicker();
-		$("#news").fadeIn();
-	}	
+    function()
+    {
+        $("#news").newsTicker();
+        $("#news").fadeIn();
+    }   
 );
 </script>
 
