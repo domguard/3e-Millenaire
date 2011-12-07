@@ -6,7 +6,7 @@
    "regions": [
     1
    ], 
-   "price": "2.57", 
+   "price": "2.66", 
    "weight": "0.1", 
    "securexport": "0"
   }
@@ -18,7 +18,7 @@
    "regions": [
     1
    ], 
-   "price": "3.65", 
+   "price": "3.74", 
    "weight": "0.25", 
    "securexport": "0"
   }
@@ -30,7 +30,7 @@
    "regions": [
     1
    ], 
-   "price": "4.9", 
+   "price": "5.01", 
    "weight": "0.5", 
    "securexport": "0"
   }
@@ -66,7 +66,7 @@
    "regions": [
     4
    ], 
-   "price": "0.41", 
+   "price": "4.1", 
    "weight": "0.25", 
    "securexport": "3"
   }
