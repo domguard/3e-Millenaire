@@ -255,8 +255,17 @@ h1, h2, h3 {
   top: 232px;
   left: -200px;
   width: 199px;
-border-left: 1px solid #a78055;
-	padding: 0;
+padding: 0;
+	border-left: 1px solid #a78055;
+}
+
+.fb-like{
+  position:absolute;
+  left: -210px;
+  width: 200px;
+padding: 0;
+	top: 240px;
+	overflow: hidden;
 }
 
 #fute{
@@ -264,6 +273,7 @@ border-left: 1px solid #a78055;
 	top: 650px;
 	left: -150px;
 }
+
 
 #sidebar-primary h3{
 	font-size: 12px;
