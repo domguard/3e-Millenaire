@@ -14,8 +14,8 @@
 </head>
 {% block body %}
 <body{% if bodyid %} id="{{ bodyid }}"{% endif %}{% if bodyclass %} class="{{ bodyclass }}"{% endif %} xmlns:fb="http://ogp.me/ns/fb#">
-<div id="fb-root"></div>
 <!--facebook like button-->
+<div id="fb-root"></div>
 <script>(function(d, s, id) {
   var js, fjs = d.getElementsByTagName(s)[0];
   if (d.getElementById(id)) return;
@@ -151,6 +151,9 @@
         {% plugin_point "shop_sidebar_primary" %}
         {% endblock %}
         {% endblock sidebar-primary %}
+        
+        <div class="fb-like" data-href="https://www.facebook.com/pages/Librairie-du-3e-Mill%C3%A9naire/106019296135772" data-send="false" data-width="190" data-show-faces="true" data-font="arial"></div>
+        
     </div>
 
     <div id="content">
