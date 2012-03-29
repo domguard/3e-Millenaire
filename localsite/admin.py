@@ -75,8 +75,8 @@ class ProductAdmin(AutocompleteAdmin, ProductOptions):
             (None, {'fields': ('site', 'category', 'name', 'description', 'short_description', 'active', 'featured', 'ordering', 'shipclass')}), 
             (_('Meta Data'), {'fields': ('meta',), 'classes': ('collapse',)}),
             (_('Item Dimensions'), {'fields': (('length', 'length_units', 'width', 'width_units', 'height', 'height_units'), ('weight', 'weight_units'))}),
-            (_('Tax'), {'fields': ('taxable', 'taxClass')}),  # 'classes': ('collapse',)}),
             (_('Related Products'), {'fields': ('related_items',)}), 
+            (_('Tax'), {'fields': ('taxable', 'taxClass')}),  # 'classes': ('collapse',)}),
             )
     filter_horizontal = ('related_items', 'also_purchased')
             
