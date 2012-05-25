@@ -79,7 +79,7 @@
                 
                 
                 
-			{% if sale %}<td  width="65" align="center">{{ cartitem.product.unit_price|currency }}</td>{% endif %}
+			{#{% if sale %}<td  width="65" align="center">{{ cartitem.product.unit_price|currency }}</td>{% endif %}#}
 			<td  width="65" align="center">{{ cartitem.product|discount_price:sale|currency }}</td>
             <td  width="65" align="center">{{ cartitem|discount_line_total:sale|currency }}</td>
         </tr>
