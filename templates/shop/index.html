@@ -17,22 +17,26 @@
 <p>
     Librairie le 3ème Millénaire - 71, Rue de la Palud - 13006 Marseille<br/>
      Le magasin est ouvert le lundi de 14h à 19h et du mardi au samedi de 10h à 19h non-stop</p>
+
+<p><h4>CONGÉS : la librairie sera fermée du 5 aout au 20 aout inclus, les commandes web seront donc traitées à partir du 21 août. Merci de votre compréhension</h4></p>
+
+
 <p>&nbsp;</p>
 
 {% if all_products_list %}
 <div id="product_category">
     <h4>Nouveautés, à voir :</h4>
-    <ul> 
-    {% for product in all_products_list %} 
+    <ul>
+    {% for product in all_products_list %}
            <li>
            {% if product.main_image %}
               {% thumbnail product.main_image.picture 85x85 as image %}
               <a href="{{ product.get_absolute_url }}"><img src="{{ image }}" width="{{ image.width }}" height="{{ image.height }}" /></a>
-           {% endif %}     
+           {% endif %}
             <a href="{{ product.get_absolute_url }}">{{ product.translated_name }}</a>
             </li>
     {% endfor %}
-    </ul> </div> 
+    </ul> </div>
 {% endif %}
 
     {% if is_paginated %}
@@ -60,22 +64,22 @@
     {% endif %}
 
 <p>&nbsp;</p>
-<p style="text-align: center;"><em><strong>REGLEMENT SECURISE PAR CB OU PAYPAL 
+<p style="text-align: center;"><em><strong>REGLEMENT SECURISE PAR CB OU PAYPAL
     (dans les 2 cas passage par le site s&eacute;curis&eacute; de paypal)<br />
 </strong></em></p>
 <h4 style="text-align: center;"><em><strong>une rubrique OCCASION (voir colonne de gauche ou cliquez </strong>
-    </em><a href="http://www.3emillenaire.fr/categorie/occasions/"><em><strong>ICI</strong></em></a><em><strong> ).<br/> 
+    </em><a href="http://www.3emillenaire.fr/categorie/occasions/"><em><strong>ICI</strong></em></a><em><strong> ).<br/>
         Livres, revues, CD ou DVD &agrave; partir de 1 &euro;</strong></em>
 
 </b></font></a></h4>
 <p align="left">Sur le web depuis 1998, il &eacute;tait temps pour notre boutique de profiter d'une bonne mise &agrave; jour....</p>
 <p>C'est fait, et nous esperons que vous aurez plaisir &agrave; parcourir les rubriques de notre catalogue en ligne. La gestion des commandes a &eacute;volu&eacute; &eacute;galement, mais nous pr&eacute;f&eacute;rons toujours le contact direct aux cartes bleues !</p>
-<p>Une grande place &agrave; &eacute;t&eacute; faite aux 
-    <a href="http://www.3emillenaire.fr/categorie/cat_produits/bien_etre/">Produits de Bien-&Ecirc;tre</a> dans cette nouvelle boutique, 
-    car nous avons &agrave; coeur de suivre les nouvelles demandes de nos clients en ce qui concerne 
-    l'<a href="http://www.3emillenaire.fr/categorie/cat_produits/bien_etre/aromatherapie/">Aromath&eacute;rapie</a>, 
+<p>Une grande place &agrave; &eacute;t&eacute; faite aux
+    <a href="http://www.3emillenaire.fr/categorie/cat_produits/bien_etre/">Produits de Bien-&Ecirc;tre</a> dans cette nouvelle boutique,
+    car nous avons &agrave; coeur de suivre les nouvelles demandes de nos clients en ce qui concerne
+    l'<a href="http://www.3emillenaire.fr/categorie/cat_produits/bien_etre/aromatherapie/">Aromath&eacute;rapie</a>,
     le <a href="http://www.3emillenaire.fr/categorie/cat_produits/bien_etre/produits_feng_shui/">Feng-Shui</a> ...</p>
-<p>Au niveau de la librairie, que nos habitu&eacute;s se rassurent, les collections rares sont toujours l&agrave;, 
+<p>Au niveau de la librairie, que nos habitu&eacute;s se rassurent, les collections rares sont toujours l&agrave;,
     et nous mettrons p&eacute;riodiquement &agrave; jour le catalogue.</p>
 <p>Bonne d&eacute;couverte !</p>
 <p align="right"><strong><em>Bruno Deleuze&nbsp;  &nbsp;&nbsp;  &nbsp;&nbsp;  </em></strong></p>
