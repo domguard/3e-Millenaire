@@ -1,7 +1,8 @@
 Merci pour votre commande!
 --------------------------
-
+{% comment %}
 CONGÉS : la librairie sera fermée du 5 aout au 20 aout inclus, les commandes web seront donc traitées à partir du 21 août. Merci de votre compréhension
+{% endcomment %}
 
 Vos articles
 ------------
