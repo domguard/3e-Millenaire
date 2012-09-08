@@ -25,32 +25,32 @@
 }(document, 'script', 'facebook-jssdk'));</script>
 
     {% plugin_point "page_top" %}
-    
-<div id="container">    
+
+<div id="container">
     <img id="tip" src="/static/img/bg_quicksum.gif"/ alt="utilisez le menu ci-dessous pour naviguer dans les catégories">
     <div id="intro">
         <div id="pageHeader">
             <a href="/index.html"><h1><span>{{ shop_name }}</span></h1>
             <h2><span>Votre librairie &eacute;sot&eacute;rique &agrave; Marseille et sur le web</span></h2></a>
-            
-            
+
+
             <ul id="news" style="display:none">
             <li>&laquo;Il ya 4 pens&#233;es illimit&#233;es : l'amour, la compassion, la joie et l'&#233;galit&#233; d'&#226;me.&raquo; Bouddha</li>
             <li>&laquo;La Terre est ma patrie et l'humanit&eacute; ma famille&raquo; Khalil Gibran</li>
             <li>An apple a day keeps the doctor away</li>
             </ul>
-    
+
         </div>
 
         <div id="navbar">
-    
+
                 <ul>
                     {% block navbar %}Breadcrumbs here{% endblock %}
                 </ul>
 
         </div>
     </div>
-    
+
 
 
     <div id="sidebar-secondary">
@@ -60,10 +60,10 @@
             {% block sidebar %}
             {% block sidebar-categories %}
             <div id="menu_container">
-                
-                
+
+
                 <ul class="nosub"><li><a href="/">Accueil</a></li></ul>
-                    
+
                 {% if category.id %}
                     {% category_tree category.id %}
                 {% else %}
@@ -74,46 +74,46 @@
                     {% endif %}
                 {% endif %}
                 <ul class="nosub">
-                 
+
                  <li>
                      {% url satchmo_contact as contact_url %}
-                    {% if contact_url %}<a href="{{ contact_url }}">{% trans "Contact Us" %}</a>{% endif %}   
-                    
+                    {% if contact_url %}<a href="{{ contact_url }}">{% trans "Contact Us" %}</a>{% endif %}
+
                 </li>
                 <li><a href="/liens.html">Liens externes</a></li>
-                    
+
                 <li>
                     {% satchmo_search_form %}
-                </li>    
+                </li>
 
-                </ul>    
+                </ul>
 
 
             </div>
-            
-            <div class="fb-like" 
-                data-href="https://www.facebook.com/pages/Librairie-du-3e-Mill%C3%A9naire/106019296135772" 
+
+            <div class="fb-like"
+                data-href="https://www.facebook.com/pages/Librairie-du-3e-Mill%C3%A9naire/106019296135772"
                 data-send="false" data-width="190" data-show-faces="true" data-font="arial"></div>
 
-            
-            
+
+
             <a id="fute" href="http://www.petitfute.com/adresse/etablissement/id/232178/librairie-esoterique-du-3e-millenaire-shopping-mode-cadeaux-librairie-specialiste-esoterisme-marseille">
-            <img src="http://www.petitfute.com/media/plaque2011.png"/></a>
-            
+            <img src="{{ media_url }}img/petit-fute_2012.jpg"/></a>
+
             {% endblock sidebar-categories %}
-            
+
             {% block sidebar-secondary-bottom %}
             {% plugin_point "sidebar_secondary_bottom" %}
             {% endblock %}
             {% endblock sidebar %}
-            
 
-            
+
+
         </div>
         {% endblock sidebar-secondary %}
-        
-        
-        
+
+
+
     </div>
 
     <div id="sidebar-primary">{# rightnav #}
@@ -127,7 +127,7 @@
         {% if category_index %} <!--<a href="{{ category_index }}">{% trans "Category Index" %}</a>--> {% endif %}
 
         {% plugin_point "sidebar_links" %}
-    
+
         <h3>{% trans "Account Information" %}</h3>
         {% if user.is_staff %}
         <a href="{% url admin:index %}" target="blank">{% trans "Admin" %}</a>
@@ -141,20 +141,20 @@
         {% endif %}
 
         {% url satchmo_cart as carturl %}
-        {% if carturl %}<a href="{{ carturl }}" id="cart_link">Votre panier  
+        {% if carturl %}<a href="{{ carturl }}" id="cart_link">Votre panier
             {% if not cart.is_empty %}
                 ({% if sale %}{{ cart|discount_cart_total:sale|currency }}{% else %}{{cart.total|currency}}{% endif%})
             {% endif%}
             </a>
-        {% endif %}       
-        {% if not cart.is_empty %}       
+        {% endif %}
+        {% if not cart.is_empty %}
             {% url satchmo_checkout-step1 as checkouturl %}
             {% if checkouturl %}<a href="{{ checkouturl }}" id="checkout_link">{% trans "Check out" %}</a>{% endif %}
         {% endif %}
-            
+
         {% plugin_point "shop_sidebar_actions" %}
-    
-        
+
+
 
         {% satchmo_language_selection_form %}
 
@@ -162,8 +162,8 @@
         {% plugin_point "shop_sidebar_primary" %}
         {% endblock %}
         {% endblock sidebar-primary %}
-        
-        
+
+
     </div>
 
     <div id="content">
@@ -177,8 +177,8 @@
         <a href="http://www.quinode.fr/">Création de site Django</a> | Boutique propulsée par <a href="http://www.satchmoproject.com">Satchmo</a>
         |
         <a href="/admin/">Admin</a>
-        
-        
+
+
         {% endblock %}
     </div>
 
@@ -201,7 +201,7 @@ $(document).ready(
     {
         $("#news").newsTicker();
         $("#news").fadeIn();
-    }   
+    }
 );
 </script>
 
